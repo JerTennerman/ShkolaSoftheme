@@ -14,7 +14,7 @@ namespace ConsoleApp1
             Console.WriteLine("dmitrii");
             Console.ReadKey();
             Console.WriteLine("hi");
-            //sfsfdsf
+            //sfsfdsfhgfd
         }
     }
 }
