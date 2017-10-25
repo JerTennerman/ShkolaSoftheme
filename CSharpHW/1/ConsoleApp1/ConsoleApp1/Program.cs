@@ -13,7 +13,7 @@ namespace ConsoleApp1
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("dmitrii");
             Console.ReadKey();
-            fdssfdfdsdfs
+            Console.WriteLine("hi");
         }
     }
 }
