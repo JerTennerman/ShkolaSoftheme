@@ -1,0 +1,6 @@
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\1\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\1\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\1\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\1\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\1\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\1\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
