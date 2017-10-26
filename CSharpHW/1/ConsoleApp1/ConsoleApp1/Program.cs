@@ -10,12 +10,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("dmitrii");
-            Console.ReadKey();
-            Console.WriteLine("hi");
-            //sfsfdsfhgfd
+            string str="**********";
+            for (var i = 11; i != 1; i--)
+            {
+                Console.WriteLine(str);
+                str=str.Remove(0,1);
+            }
         }
     }
 }
