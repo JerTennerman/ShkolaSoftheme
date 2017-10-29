@@ -1,0 +1,14 @@
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\bin\Debug\data.exe.config
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\bin\Debug\data.exe
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\bin\Debug\data.pdb
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\data.csprojResolveAssemblyReference.cache
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\MainWindow.g.cs
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\App.g.cs
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\data_MarkupCompile.cache
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\data_MarkupCompile.lref
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\MainWindow.baml
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\data.g.resources
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\data.Properties.Resources.resources
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\data.csproj.GenerateResource.Cache
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\data.exe
+C:\Users\Jer\Documents\GitHub\ShkolaSoftheme\CSharpHW\2\1\data\data\obj\Debug\data.pdb
