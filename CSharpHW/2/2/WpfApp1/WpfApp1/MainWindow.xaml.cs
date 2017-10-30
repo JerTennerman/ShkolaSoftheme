@@ -85,6 +85,13 @@ namespace WpfApp1
                 }
 
             }
+            if(double.Parse(textBox2.Text)==0)
+            {
+                div.IsEnabled = false;
+                mod.IsEnabled = false;
+                intDiv.IsEnabled = false;
+            }
+
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
@@ -116,9 +123,9 @@ namespace WpfApp1
 
         private void intDiv_Click(object sender, RoutedEventArgs e)
         {
-            int x = Int32.Parse(textBox1.Text);
-            int y = Int32.Parse(textBox2.Text);
-            result.Content = x/y;
+            double x = double.Parse(textBox1.Text);
+            double y = double.Parse(textBox2.Text);
+            result.Content = Convert.ToInt32(x/y);
         }
 
         private void sqrt_Click(object sender, RoutedEventArgs e)
