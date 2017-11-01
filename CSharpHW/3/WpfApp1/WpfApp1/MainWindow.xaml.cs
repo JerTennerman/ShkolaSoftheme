@@ -91,7 +91,7 @@ namespace WpfApp1
         }
         private void Gender()
         {
-            if (genderInput.Text == "male" || genderInput.Text == "female")
+            if (genderInput.Text != "male" || genderInput.Text != "female")
             {
                 result4.Content = "incorrect gender";
             }
@@ -115,7 +115,7 @@ namespace WpfApp1
         {
             int number;
             bool r6 = Int32.TryParse(phoneInput.Text, out number);
-            if(!r6 && !(phoneInput.Text.Length==12))
+            if(!r6 || !(phoneInput.Text.Length==12))
             {
                 result6.Content = "incorrect phone number";
             }
@@ -126,7 +126,6 @@ namespace WpfApp1
         }
         private void AddInfo()
         {
-            bool r7 = false;
             if(!(addInfo.Text.Length<2000))
             {
                 result7.Content = "too much additional info";
