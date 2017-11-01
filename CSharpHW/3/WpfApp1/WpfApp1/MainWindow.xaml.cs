@@ -91,17 +91,11 @@ namespace WpfApp1
         }
         private void Gender()
         {
-            bool r4;
             if (genderInput.Text == "male" || genderInput.Text == "female")
-            {
-                 r4 = true;
-            }
-            else  r4 = false;
-            if(!r4)
             {
                 result4.Content = "incorrect gender";
             }
-            else
+            else  
             {
                 result4.Content = null;
             }
