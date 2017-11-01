@@ -41,16 +41,7 @@ namespace WpfApp1
         }
         private void FirstName()
         {
-            bool r1=true;
-            if((fnInput.Text).Length>=255)
-            {
-                r1 = false;
-            }else 
-            if ((fnInput.Text).Any(char.IsDigit))
-            {
-                r1 = false;
-            }
-            if (!r1 || fnInput.Text=="")
+            if((fnInput.Text).Length>=255 || (fnInput.Text).Any(char.IsDigit) || fnInput.Text == "")
             {
                 result1.Content = "incorrect first name";
             }
@@ -61,17 +52,7 @@ namespace WpfApp1
         }
         private void LastName()
         {
-            bool r2 = true;
-            if ((lnInput.Text).Length >= 255)
-            {
-                r2 = false;
-            }
-            else
-            if ((lnInput.Text).Any(char.IsDigit))
-            {
-                r2 = false;
-            }
-            if (!r2 || lnInput.Text=="")
+            if ((lnInput.Text).Length >= 255 || (lnInput.Text).Any(char.IsDigit) || lnInput.Text == "")
             {
                 result2.Content = "incorrect last name";
             }

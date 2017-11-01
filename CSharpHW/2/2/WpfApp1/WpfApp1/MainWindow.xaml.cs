@@ -72,6 +72,12 @@ namespace WpfApp1
                     intDiv.IsEnabled = true;
                     gra.IsEnabled = true;
                     mod.IsEnabled = true;
+                    if (double.Parse(textBox2.Text) == 0)
+                    {
+                        div.IsEnabled = false;
+                        mod.IsEnabled = false;
+                        intDiv.IsEnabled = false;
+                    }
                 }
                 else
                 {
@@ -85,12 +91,7 @@ namespace WpfApp1
                 }
 
             }
-            if(double.Parse(textBox2.Text)==0)
-            {
-                div.IsEnabled = false;
-                mod.IsEnabled = false;
-                intDiv.IsEnabled = false;
-            }
+            
 
         }
 
