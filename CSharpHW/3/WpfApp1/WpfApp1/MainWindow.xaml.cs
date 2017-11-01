@@ -102,12 +102,7 @@ namespace WpfApp1
         }
         private void Email()
         {
-            bool r5=true;
             if(!(emailInput.Text).Contains('@') || emailInput.Text.Length>=255)
-            {
-                r5 = false;
-            }
-            if(!r5)
             {
                 result5.Content = "incorrect Email";
             }
@@ -120,11 +115,7 @@ namespace WpfApp1
         {
             int number;
             bool r6 = Int32.TryParse(phoneInput.Text, out number);
-            if(!r6==true && !(phoneInput.Text.Length==12))
-            {
-                r6 = false;
-            }
-            if(!r6)
+            if(!r6 && !(phoneInput.Text.Length==12))
             {
                 result6.Content = "incorrect phone number";
             }
@@ -136,11 +127,7 @@ namespace WpfApp1
         private void AddInfo()
         {
             bool r7 = false;
-            if(addInfo.Text.Length<2000)
-            {
-                r7 = true;
-            }
-            if (!r7)
+            if(!(addInfo.Text.Length<2000))
             {
                 result7.Content = "too much additional info";
             }
