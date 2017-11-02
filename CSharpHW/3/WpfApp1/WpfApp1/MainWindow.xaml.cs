@@ -41,7 +41,7 @@ namespace WpfApp1
         }
         private void FirstName()
         {
-            if ((fnInput.Text).Length >= 255 || (fnInput.Text).Any(char.IsDigit) || fnInput.Text == "")
+            if ((fnInput.Text).Length >= 255 || (fnInput.Text).Any(ch => !Char.IsLetter(ch)) || fnInput.Text == "")
             {
                 result1.Content = "incorrect first name";
             }
@@ -52,7 +52,7 @@ namespace WpfApp1
         }
         private void LastName()
         {
-            if ((lnInput.Text).Length >= 255 || (lnInput.Text).Any(char.IsDigit) || lnInput.Text == "")
+            if ((lnInput.Text).Length >= 255 || (fnInput.Text).Any(ch => !Char.IsLetter(ch)) || lnInput.Text == "" )
             {
                 result2.Content = "incorrect last name";
             }
