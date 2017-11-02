@@ -17,8 +17,14 @@ namespace ConsoleApp1
                 if(mm>0 && mm<13)
                 {
                     int yyyy = ReadYear();
-                    if(DayMonth(dd,mm,yyyy))
-                    ZodiacSign(dd,mm);
+                    if (DayMonth(dd, mm, yyyy) && yyyy != 0)
+                    {
+                        ZodiacSign(dd, mm);
+                    }
+                    else
+                    {
+                        Console.WriteLine("invalid year");
+                    }
                 }
                 else
                 {
@@ -73,6 +79,10 @@ namespace ConsoleApp1
                         {
                             legit = false;
                         }
+                    }
+                    else if(d>29)
+                    {
+                        legit = false;
                     }
                 }
                 else
