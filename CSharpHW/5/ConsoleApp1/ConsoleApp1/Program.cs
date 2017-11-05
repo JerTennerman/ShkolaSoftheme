@@ -71,25 +71,6 @@ namespace ConsoleApp1
         }
         static void buildRomb(int N)
         {
-            //string[] str;
-            //str = new string[N];
-            //str[N / 2] = "*";
-            //for (int i = 0; i < N; i++)
-            //{
-            //    if(i<N/2)
-            //    {
-            //        Console.Write(str);
-            //        str[N / 2 - i] = "*";
-            //        str[N / 2 + i] = "*";
-            //    }
-            //    else
-            //    {
-            //        //Console.Write(str);
-            //        //str[N / 2 - i] = " ";
-            //        //str[N / 2 + i] = " ";
-            //    }
-            //    Console.WriteLine();
-            //}
             for (int i = 0; i < N; i++)
             {
                 for (int j = 0; j < N-i; j++)
