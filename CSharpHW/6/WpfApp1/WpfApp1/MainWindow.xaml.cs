@@ -70,6 +70,7 @@ namespace WpfApp1
                                     Initialise();
                                     break;
                                 }
+                            default: break;
                         }
                     }
                     else
