@@ -26,6 +26,9 @@ namespace ConsoleApp1
     class ShapeDescriptor
     {
         string basicShape;
+        byte ab;
+        byte ac;
+        byte bc;
         public ShapeDescriptor(Point a)
         {
             basicShape = "point";
@@ -33,10 +36,14 @@ namespace ConsoleApp1
         public ShapeDescriptor(Point a, Point b)
         {
             basicShape = "line";
+            var ab = Math.Sqrt(Math.Pow(b._x - a._x, 2) + Math.Pow(b._y - a._y, 2));
         }
         public ShapeDescriptor(Point a, Point b, Point c)
         {
             basicShape = "triangle";
+            var ab = Math.Sqrt(Math.Pow(b._x - a._x, 2) + Math.Pow(b._y - a._y, 2));
+            var ac = Math.Sqrt(Math.Pow(c._x - a._x, 2) + Math.Pow(c._y - a._y, 2));
+            var bc = Math.Sqrt(Math.Pow(c._x - b._x, 2) + Math.Pow(c._y - b._y, 2));
         }
         public ShapeDescriptor(Point a, Point b, Point c, Point d)
         {

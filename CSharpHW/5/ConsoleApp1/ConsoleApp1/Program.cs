@@ -19,7 +19,6 @@ namespace ConsoleApp1
                 {
                     return;
                 }
-                if ( option.Equals("t", StringComparison.InvariantCultureIgnoreCase) || option.Equals("s", StringComparison.InvariantCultureIgnoreCase) || option.Equals("r", StringComparison.InvariantCultureIgnoreCase))
                 if(option.Equals("t", StringComparison.InvariantCultureIgnoreCase) || option.Equals("s", StringComparison.InvariantCultureIgnoreCase) || option.Equals("r", StringComparison.InvariantCultureIgnoreCase))
                 {
                     Console.WriteLine("Choose length (1-10)");
