@@ -15,19 +15,12 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Choose option T-Triangle,S-Square,R-Romb,Q-exit");
                 option = Console.ReadLine();
-<<<<<<< HEAD
                 if (option.Equals("q", StringComparison.InvariantCultureIgnoreCase))
                 {
                     return;
                 }
                 if ( option.Equals("t", StringComparison.InvariantCultureIgnoreCase) || option.Equals("s", StringComparison.InvariantCultureIgnoreCase) || option.Equals("r", StringComparison.InvariantCultureIgnoreCase))
-=======
-                //if (option == "q" || option == "Q")
-                //{
-                //    return;
-                //}
                 if(option.Equals("t", StringComparison.InvariantCultureIgnoreCase) || option.Equals("s", StringComparison.InvariantCultureIgnoreCase) || option.Equals("r", StringComparison.InvariantCultureIgnoreCase))
->>>>>>> 0a6c9c9eb450c87a5d0ca94ee999adab0542cbe5
                 {
                     Console.WriteLine("Choose length (1-10)");
                     int n;
@@ -53,7 +46,6 @@ namespace ConsoleApp1
                 }
 
             } while (1!=0);
-            Console.ReadKey();
         }
 
         static void buildTriangle(int N)
