@@ -87,6 +87,10 @@ namespace WpfApp1
             {
                 MessageBox.Show(indexException.Message);
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Unexpected error has occured");
+            }
         }
     }
 }

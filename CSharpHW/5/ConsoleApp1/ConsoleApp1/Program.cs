@@ -15,11 +15,11 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Choose option T-Triangle,S-Square,R-Romb,Q-exit");
                 option = Console.ReadLine();
-                //if (option == "q" || option == "Q")
-                //{
-                //    return;
-                //}
-                if(!(option.Equals("q", StringComparison.InvariantCultureIgnoreCase)) &&( option.Equals("t", StringComparison.InvariantCultureIgnoreCase) || option.Equals("s", StringComparison.InvariantCultureIgnoreCase) || option.Equals("r", StringComparison.InvariantCultureIgnoreCase)))
+                if (option.Equals("q", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return;
+                }
+                if ( option.Equals("t", StringComparison.InvariantCultureIgnoreCase) || option.Equals("s", StringComparison.InvariantCultureIgnoreCase) || option.Equals("r", StringComparison.InvariantCultureIgnoreCase))
                 {
                     Console.WriteLine("Choose length (1-10)");
                     int n;
@@ -44,7 +44,7 @@ namespace ConsoleApp1
                         }
                 }
 
-            } while (!option.Equals("q", StringComparison.InvariantCultureIgnoreCase));
+            } while (1!=0);
             Console.ReadKey();
         }
 
