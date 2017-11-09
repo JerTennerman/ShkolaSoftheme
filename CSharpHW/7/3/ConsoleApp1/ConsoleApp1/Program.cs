@@ -151,7 +151,6 @@ namespace ConsoleApp1
                     basicShape= "Trapezoid";
                 }
             }
-            else basicShape= basicShape;
         }
     }
 }
