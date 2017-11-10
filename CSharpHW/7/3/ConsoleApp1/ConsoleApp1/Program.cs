@@ -128,7 +128,7 @@ namespace ConsoleApp1
                     if (ab == ac && bd == cd && ab == bd)
                     {
                         ac = Math.Sqrt(ab * ab + ac * ac);
-                        if (ab / ac == 0)
+                        if (ab / ac == 1)
                         {
                             basicShape = "square";
                         }
