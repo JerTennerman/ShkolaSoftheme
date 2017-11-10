@@ -97,31 +97,31 @@ namespace ConsoleApp1
                 }
                 if ((ab > ac + bc) || (ac > ab + bc) || (bc > ac + ab))
                 {
-                    basicShape= "Triangle doesn't exist";
+                    basicShape = "Triangle doesn't exist";
                 }
                 else if (ab == ac && ab == bc)
                 {
-                    basicShape= "Equilateral triangle";
+                    basicShape = "Equilateral triangle";
                 }
                 else if ((ab == ac) || (ab == bc) || (ac == bc))
                 {
-                    basicShape= "Isosceles triangle";
+                    basicShape = "Isosceles triangle";
                 }
                 else if (max * max == s1 * s1 + s2 * s2)
                 {
-                    basicShape= "Right Triangle";
+                    basicShape = "Right Triangle";
                 }
                 else
                 {
-                    basicShape= "Scalene Triangle";
+                    basicShape = "Scalene Triangle";
                 }
             }
-            else if(basicShape== "quadrangle")
+            else if (basicShape == "quadrangle")
             {
                 var max = Math.Max(Math.Max(ab, ac), Math.Max(bd, cd));
                 if (max > ab + ac + bd || max > ab + ac + cd || max > ab + bd + cd || max > ac + bd + cd)
                 {
-                    basicShape= "quadrangle doesn't exist";
+                    basicShape = "quadrangle doesn't exist";
                 }
                 else if ((ab == ac || ab == cd || ab == bd) && (ac == ab || ac == cd || ac == bd) && (cd == ac || cd == ab || cd == bd))
                 {
@@ -130,19 +130,19 @@ namespace ConsoleApp1
                         ac = Math.Sqrt(ab * ab + ac * ac);
                         if (ab / ac == 0)
                         {
-                            basicShape= "square";
+                            basicShape = "square";
                         }
                         else
                         {
-                            basicShape= "rhombus";
+                            basicShape = "rhombus";
                         }
                     }
                     else
                     {
-                        basicShape= "rectangle";
+                        basicShape = "rectangle";
                     }
                 }
-                else if ((ab == ac || ab == ac) || (ac == cd) || (cd == bd))
+                else if ((ab == ac) || (ac == cd) || (cd == bd))
                 {
                     basicShape= "deltoid";
                 }
