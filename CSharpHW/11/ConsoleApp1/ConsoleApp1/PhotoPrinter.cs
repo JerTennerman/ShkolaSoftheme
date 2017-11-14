@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    struct Car
+    class PhotoPrinter :Printer
     {
-
     }
 }
