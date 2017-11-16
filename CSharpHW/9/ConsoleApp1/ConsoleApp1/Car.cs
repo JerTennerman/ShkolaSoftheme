@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class PhotoPrinter :Printer
+    class Car
     {
-        public override void Print(string str)
-        {
-            Console.WriteLine("photoprint-" + str);
-        }
     }
 }

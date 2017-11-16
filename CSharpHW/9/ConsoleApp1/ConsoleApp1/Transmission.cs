@@ -8,6 +8,6 @@ namespace ConsoleApp1
 {
     public class Transmission
     {
-        public enum _type { manual, auto }
+        public enum type { manual, auto }
     }
 }
