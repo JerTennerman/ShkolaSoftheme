@@ -15,6 +15,7 @@ namespace ConsoleApp1
             p1.Print(str);
             p1 = new ColourPrinter();
             p1.Print(str, "Green");
+            p1.Print(str);
             p1 = new PhotoPrinter();
             p1.Print(str);
                

@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     public class ColourPrinter :Printer
     {
-        public override void Print(string str, string colour)
+        public override void Print(string str, string colour="White")
         {
             ConsoleColor col;
             if (Enum.TryParse(colour, out col))
