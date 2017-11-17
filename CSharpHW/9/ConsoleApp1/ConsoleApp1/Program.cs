@@ -10,15 +10,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var red = new Color("red");
-            var merlin = new Engine(3000, 744);
-            var defaultTransmission = new Transmission();
-            var car = new CarConstructor();
-            car.Construct(red, merlin, defaultTransmission);
-            car.GetInfo();
-            var engine2 = new Engine(654, 120);
-            car.Reconstruct(engine2);
-            car.GetInfo();
+            var e1 = Engine.category.combustion;
+            var t1 = new Transmission();
+            var col = new Color();
+            var car = new Car();
+            CarConstructor.Construct(car, col, e1, t1);
+            CarConstructor.GetInfo(car);
         }
     }
 }

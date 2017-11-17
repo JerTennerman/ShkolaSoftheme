@@ -6,29 +6,21 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class CarConstructor
+    public static class CarConstructor
     {
-        public Color _color { get; set; }
-        public Engine _engine { get; set; }
-        public Transmission _transmission { get; set; }
-        public void Construct(Color color, Engine engine, Transmission transmission)
+        public static void Construct(Car car,Color color, Engine.category eng, Transmission transmission)
         {
-            _color = color;
-            _engine = engine;
-            _transmission = transmission;
+            car.colour = color;
+            car.engine = eng;
+            car.transmission = transmission;
         }
-        public void GetInfo()
+        public static void GetInfo(Car car)
         {
-            Console.Write("New car got: Color : ");
-            _color.GetColor();
-            Console.Write(" Engine : ");
-            _engine.GetEngine();
-            Console.Write(" Transmission : ");
-            _transmission.GetTransmisson();
+            Console.Write("New car got: Color : "+ car.colour);
         }
-        public void Reconstruct(Engine engine)
+        public static void Reconstruct(Car car,Engine engine)
         {
-            _engine = engine;
+            car.engine = engine;
         }
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Car
+    public struct Car
     {
+        public Color colour;
+        public Engine engine;
+        public Transmission transmission;
     }
 }

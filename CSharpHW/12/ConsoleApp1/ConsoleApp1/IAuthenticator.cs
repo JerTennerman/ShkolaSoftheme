@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class Engine
+    interface IAuthenticator
     {
-        public enum category { combustion, electric }
+      bool  AuthenticateUser(IUser user);
     }
 }

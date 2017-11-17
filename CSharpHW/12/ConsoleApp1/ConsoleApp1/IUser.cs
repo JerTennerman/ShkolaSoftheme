@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class Engine
+    interface IUser
     {
-        public enum category { combustion, electric }
+        string name(string n);
+        string email(string mail);
+        string passwod(string pass);
+        string GetFullInfo();
     }
 }

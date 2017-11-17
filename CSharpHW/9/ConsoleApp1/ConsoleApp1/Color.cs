@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     public class Color
     {
-        public enum _mainColor {red, blue, green, black}
-        public enum _shade { red, blue, green, black }
+        public enum mainColor { red, blue, green, black }
+        public enum shade { red, blue, green, black, none }
     }
 }

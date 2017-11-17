@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class Engine
+    class Program
     {
-        public enum category { combustion, electric }
+        static void Main(string[] args)
+        {
+        }
     }
 }
