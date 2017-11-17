@@ -14,13 +14,14 @@ namespace ConsoleApp1
             if (Enum.TryParse(colour, out col))
             {
                 Console.ForegroundColor = col;
-                base.Print(str);
+                Console.Write(str);
                 Console.ResetColor();
             }
             else
             {
-                Console.WriteLine("invalid colour");
+                Console.Write(colour + " is not a colour, or is not supported");
             }
+            Console.WriteLine();
         }
     }
 }

@@ -27,8 +27,8 @@ namespace ConsoleApp2
             col[2] = "Cyan";
             col[3] = "Red";
             col[4] = "Mayonnaise";
-            p1 = new ColourPrinter();
-            ExtensionMethods.Print(p1, str, col);
+            var p2 = new ColourPrinter();
+            ExtensionMethods.Print(p2, str, col);
         }
     }
 }
