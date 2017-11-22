@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    interface IUser
+    public interface IUser
     {
-        string name(string n);
-        string email(string mail);
-        string passwod(string pass);
-        string GetFullInfo();
+        string name { get;}
+        string email { get;}
+        string password { get;}
+        DateTime lastOnline { get; set; }
+        void GetFullInfo();
     }
 }
