@@ -14,23 +14,13 @@ namespace ConsoleApp2
             foreach (string msg in str)
                 printer.Print(msg);
         }
-        public static void Print(Printer printer, string[] str, string[] colArr)
+        public static void Print(ColourPrinter printer, string[] str, string[] colArr)
         {
             foreach (string msg in str)
             {
                 foreach (string colour in colArr)
                 {
-                    ConsoleColor col;
-                    if (Enum.TryParse(colour, out col))
-                    {
-                        Console.ForegroundColor = col;
-                        Console.Write(msg);
-                        Console.ResetColor();
-                    }
-                    else
-                    {
-                        Console.WriteLine(colour+" is not a colour, or is not supported");
-                    }
+                    printer.Print(msg,colour);
                 }
                 Console.WriteLine();
             }

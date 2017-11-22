@@ -19,16 +19,16 @@ namespace ConsoleApp2
             str[3] = "s3";
             str[4] = "s4";
             ExtensionMethods.Print(p1, str);
-            var p2 = new PhotoPrinter();
-            ExtensionMethods.Print(p2, str);
+            p1 = new PhotoPrinter();
+            ExtensionMethods.Print(p1, str);
             string[] col = new string[5];
             col[0] = "Green";
             col[1] = "Yellow";
             col[2] = "Cyan";
             col[3] = "Red";
             col[4] = "Mayonnaise";
-            var p3 = new ColourPrinter();
-            ExtensionMethods.Print(p3, str, col);
+            var p2 = new ColourPrinter();
+            ExtensionMethods.Print(p2, str, col);
         }
     }
 }
