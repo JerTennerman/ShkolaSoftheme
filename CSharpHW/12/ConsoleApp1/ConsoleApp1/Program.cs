@@ -25,13 +25,15 @@ namespace ConsoleApp1
                 var thisUser = new User(login, password);
                 if(userDataBase.AuthenticateUser(thisUser))
                 {
-                    Console.WriteLine("User authenticated, last online -", + thisUser.lastOnline.TimeOfDay);
+                    Console.WriteLine("User authenticated, last online -");
+                    Console.Write(thisUser.lastOnline.Date);
                 }
                 else
                 {
                     Console.WriteLine("User was added to data base");
                     userDataBase.AddUser(thisUser);
                 }
+                Console.ReadKey();
                 Console.Clear();
             } while (true);
         }

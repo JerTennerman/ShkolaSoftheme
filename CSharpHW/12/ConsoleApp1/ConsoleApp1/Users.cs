@@ -8,31 +8,23 @@ namespace ConsoleApp1
 {
     public class Users : IAuthenticator
     {
-        public User[] userArr ;
-        private int _amount = 4;
+        public List<User> userArr;
+        private int _amount = 0;
         public Users()
         {
-            User[] userArr = new User[10];
+            userArr = new List<User>();
         }
         public void AddUser(User newUser)
         {
-            var pos = CheckAndExtend();
-            if (pos != _amount)
-            {
-                userArr[pos] = newUser;
-            }
-            else
-            {
-                var tmp = _amount;
-                Array.Resize(ref userArr, _amount*2);
-                userArr[tmp] = newUser;
-                _amount++;
-            }
+            userArr.Add(newUser);
+            _amount++;
         }
-        private int CheckAndExtend()
+        private int Check()
         {
-            if (userArr[0] == null)
+            if (_amount==0)
+            {
                 return 0;
+            }
             var mas = _amount;
             for (int i = mas--; i > 0; i--)
             {
