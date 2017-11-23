@@ -16,6 +16,7 @@ namespace ConsoleApp1
         public void AddUser(User newUser)
         {
             _userArr.Add(newUser);
+            newUser.lastOnline = DateTime.Now;
         }
 
         public string AuthenticateUser(IUser user)
@@ -53,7 +54,7 @@ namespace ConsoleApp1
             {
                 if(user.name==name)
                 {
-                    Console.WriteLine("password={0}, Last online ={1}",user.password,user.lastOnline.Date);
+                    Console.WriteLine("password={0}, Last online ={1}",user.password,user.lastOnline);
                 }
             }
         }

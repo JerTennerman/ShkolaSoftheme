@@ -23,7 +23,15 @@ namespace ConsoleApp1
         }
         public void GetFullInfo()
         {
-            Console.WriteLine("User {0}: password - {1}, email - {2}, last online - {4}",name,password,email,lastOnline);
+            if(name==null)
+            {
+                Console.Write("\nUser {0}: password - {1}", email, password);
+            }
+            else
+            {
+                Console.Write("\nUser {0}: password - {1}", name, password);
+            }
+            Console.Write(", last online -"+lastOnline);
         }
         public string name { get; private set; }
         public string password { get; private set; }
