@@ -8,35 +8,40 @@ namespace ConsoleApp1
 {
     public class Users : IAuthenticator, IUserDataBase
     {
-        public List<User> userArr;
-        private int _amount = 0;
+        private List<User> _userArr;
         public Users()
         {
-            userArr = new List<User>();
+            _userArr = new List<User>();
         }
         public void AddUser(User newUser)
         {
-            userArr.Add(newUser);
-            _amount++;
+            _userArr.Add(newUser);
         }
 
-        public bool AuthenticateUser(IUser user)
+        public string AuthenticateUser(IUser user)
         {
-            for (int i = 0; i < _amount; i++)
+            for (int i = 0; i < _userArr.Count; i++)
             {
 
-                if ((user.name == userArr[i].name || user.email==userArr[i].email) && user.password==userArr[i].password)
+                if ((user.name == _userArr[i].name && user.name!=null) || (user.email!=null && user.email==_userArr[i].email))
                 {
-                    user.lastOnline = DateTime.Now;
-                    return true;
+                    if (user.password == _userArr[i].password)
+                    {
+                        user.lastOnline = DateTime.Now;
+                        return "login";
+                    }
+                    else
+                    {
+                        return "fail";
+                    }
                 }
             }
-            return false;
+            return "new";
         }
 
         public void Dispose()
         {
-            foreach(User user in userArr)
+            foreach(User user in _userArr)
             {
                 user.GetFullInfo();
             }
@@ -44,7 +49,7 @@ namespace ConsoleApp1
 
         public void FindByName(string name)
         {
-            foreach (User user in userArr)
+            foreach (User user in _userArr)
             {
                 if(user.name==name)
                 {

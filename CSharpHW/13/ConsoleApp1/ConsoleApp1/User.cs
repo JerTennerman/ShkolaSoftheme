@@ -19,10 +19,11 @@ namespace ConsoleApp1
                 email=login;
             }
             password = pass;
+            lastOnline = DateTime.Now;
         }
         public void GetFullInfo()
         {
-            Console.WriteLine("User {0}: password - {1}, email - {2}",name,password,email);
+            Console.WriteLine("User {0}: password - {1}, email - {2}, last online - {4}",name,password,email,lastOnline);
         }
         public string name { get; private set; }
         public string password { get; private set; }

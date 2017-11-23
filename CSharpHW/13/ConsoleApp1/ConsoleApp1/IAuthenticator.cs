@@ -8,6 +8,6 @@ namespace ConsoleApp1
 {
     interface IAuthenticator
     {
-      bool  AuthenticateUser(IUser user);
+      string  AuthenticateUser(IUser user);
     }
 }
