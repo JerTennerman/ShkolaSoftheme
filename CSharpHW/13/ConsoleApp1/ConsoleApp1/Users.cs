@@ -50,12 +50,19 @@ namespace ConsoleApp1
 
         public void FindByName(string name)
         {
+            var found = false;
             foreach (User user in _userArr)
             {
                 if(user.name==name)
                 {
                     Console.WriteLine("password={0}, Last online ={1}",user.password,user.lastOnline);
+                    found = true;
+                    break;
                 }
+            }
+            if(!found)
+            {
+                Console.WriteLine("user was not found");
             }
         }
     }

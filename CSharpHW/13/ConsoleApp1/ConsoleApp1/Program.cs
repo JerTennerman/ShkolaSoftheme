@@ -13,7 +13,7 @@ namespace ConsoleApp1
             var userDataBase = Initialize();
             do
             {
-                Console.WriteLine("Login using name or email and password");
+                Console.WriteLine("Login using name or email and password.\nOr enter \"FindByName\", or \"Dispose\"\nuse exit to exit program");
                 Console.Write("Login:");
                 var login = Console.ReadLine();
                 switch (login)
@@ -32,7 +32,7 @@ namespace ConsoleApp1
                         }
                     case "exit":
                         {
-                            Console.WriteLine("type \"exit\" in password to exit program");
+                            Console.WriteLine("type \"exit\" again to exit program");
                             Console.Write("Password:");
                             var password = Console.ReadLine();
                             if(password=="exit")
