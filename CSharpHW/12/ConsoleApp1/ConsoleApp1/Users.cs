@@ -19,26 +19,6 @@ namespace ConsoleApp1
             userArr.Add(newUser);
             _amount++;
         }
-        private int Check()
-        {
-            if (_amount==0)
-            {
-                return 0;
-            }
-            var mas = _amount;
-            for (int i = mas--; i > 0; i--)
-            {
-                if (i!=_amount)
-                {
-                    if (userArr[i] == null && userArr[i++] != null)
-                    {
-                        return i;
-                    }
-                }
-                return i;
-            }
-            return _amount;
-        }
         public bool AuthenticateUser(IUser user)
         {
             for (int i = 0; i < _amount; i++)
