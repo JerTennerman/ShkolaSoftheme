@@ -13,12 +13,12 @@ namespace ConsoleApp1
             var userDataBase = Initialize();
             do
             {
-                Console.WriteLine("Login using name or email and password.\nOr enter \"FindByName\", or \"Dispose\"\nuse exit to exit program");
+                Console.WriteLine("Login using name or email and password.\nOr enter \"Find\", or \"Dispose\"\nuse exit to exit program");
                 Console.Write("Login:");
                 var login = Console.ReadLine();
                 switch (login)
                 {
-                    case "FindByName":
+                    case "Find":
                         {
                             Console.Write("Login:");
                             login = Console.ReadLine();
@@ -80,7 +80,7 @@ namespace ConsoleApp1
             userArr.AddUser(user1);
             var user2 = new User("1@1.2", "1sadasd");
             userArr.AddUser(user2);
-            var user3 = new User("2@sadwad@.sadasda", "xzczxc5");
+            var user3 = new User("2@sadwad.sadasda", "xzczxc5");
             userArr.AddUser(user3);
             var user4 = new User("ausidhbawyd", "asdasfwadw");
             userArr.AddUser(user4);
