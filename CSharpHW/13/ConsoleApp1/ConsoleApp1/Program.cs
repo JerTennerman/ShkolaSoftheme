@@ -46,10 +46,6 @@ namespace ConsoleApp1
                         {
                             Console.Write("Password:");
                             var password = Console.ReadLine();
-                            if (login == "exit" && password == "exit")
-                            {
-                                return;
-                            }
                             var thisUser = new User(login, password);
                             var result = userDataBase.AuthenticateUser(thisUser);
                             if (result == "login")
