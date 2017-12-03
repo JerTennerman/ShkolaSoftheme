@@ -25,10 +25,12 @@ namespace ConsoleApp1
                 _accounts.Add(acc.number, acc);
                 acc.OnCall += (sender, args) => { Connect(sender, args); };
                 acc.OnSms += (sender, args) => { RedirectSms(sender, args); };
+                acc.op = this;
+                acc.isGotOperator = true;
             }
-            catch (ArgumentException keyException)
+            catch (Exception keyException)
             {
-                Console.WriteLine("An element with number = \"{0}\" already exists.\n {1}", acc.number, keyException);
+                Console.WriteLine(keyException);
             }
 
         }
@@ -45,7 +47,7 @@ namespace ConsoleApp1
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             var acc = sender as MobileAccount;
-            Console.WriteLine("redirected message: \"{0}\" from {1} and {2}",e.Message, acc.number, e.Acceptor);
+            Console.WriteLine("redirected message: \"{0}\" from {1} to {2}",e.Message, acc.number, e.Acceptor);
             Console.ResetColor();
         }
     }

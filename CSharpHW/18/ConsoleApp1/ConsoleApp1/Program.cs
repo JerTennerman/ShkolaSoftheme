@@ -20,6 +20,13 @@ namespace ConsoleApp1
             c1.AddToContacts(c2);
             c1.Call(c2);
             c1.Sms(c2, "sdasdasd");
+            var c3 = new MobileAccount(0509877678, "asdf");
+            op.Add(c3);
+            c1.Call(c3);
+            var c4 = new MobileAccount(0509877678, "asdf");
+            op.Add(c4);
+            c4.AddToContacts(c3);
+            c4.Call(c3);
         }
     }
 }

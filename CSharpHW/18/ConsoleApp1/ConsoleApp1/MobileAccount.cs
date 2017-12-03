@@ -14,6 +14,8 @@ namespace ConsoleApp1
 
         public Operator op;
 
+        public bool isGotOperator=false;
+
         public delegate void MobileAccountHandler(object sender, MobileAccountEventArgs e);
 
         public event MobileAccountHandler OnCall;
@@ -26,7 +28,6 @@ namespace ConsoleApp1
         {
             number = newNumber;
             name = newName;
-            Operator op = new Operator("defOp");
             phonebook = new Dictionary<int, MobileAccount>();
         }
 
@@ -37,28 +38,71 @@ namespace ConsoleApp1
 
         public void Call(ulong acceptor)
         {
-            Console.WriteLine("Called {0} from {1}", acceptor, number);
-            OnCall?.Invoke(this, new MobileAccountEventArgs(acceptor));
-
+            if (CheckOperator())
+            {
+                Console.WriteLine("Called {0} from {1}", acceptor, number);
+                OnCall?.Invoke(this, new MobileAccountEventArgs(acceptor));
+            }
         }
 
         public void Sms(ulong acceptor, string message)
         {
-            Console.WriteLine("Sent {0} from {1} to {2}", message, number, acceptor);
-            OnSms?.Invoke(this, new MobileAccountEventArgs(acceptor, message));
+            if (CheckOperator())
+            {
+                Console.WriteLine("Sent {0} from {1} to {2}", message, number, acceptor);
+                OnSms?.Invoke(this, new MobileAccountEventArgs(acceptor, message));
+            }
         }
 
         public void Call(MobileAccount phoneBookContact)
         {
-            Console.WriteLine("Called {0} from {1}", phoneBookContact.name, number);
-            OnCall?.Invoke(this, new MobileAccountEventArgs(phoneBookContact.number));
-
+            if (CheckOperator())
+            {
+                bool isFound = false;
+                foreach (var contact in phonebook)
+                {
+                    if (contact.Value == phoneBookContact)
+                    {
+                        Console.WriteLine("Called {0} from {1}", phoneBookContact.name, number);
+                        OnCall?.Invoke(this, new MobileAccountEventArgs(phoneBookContact.number));
+                        isFound = true;
+                    }
+                }
+                if (!isFound)
+                {
+                    Console.WriteLine("contact is not in phone book");
+                }
+            }
         }
 
         public void Sms(MobileAccount phoneBookContact, string message)
         {
-            Console.WriteLine("Sent {0} from {1} to {2}", message, number, phoneBookContact.name);
-            OnSms?.Invoke(this, new MobileAccountEventArgs(phoneBookContact.number, message));
+            if (CheckOperator())
+            {
+                bool isFound = false;
+                foreach (var contact in phonebook)
+                {
+                    if (contact.Value == phoneBookContact)
+                    {
+                        Console.WriteLine("Sent {0} from {1} to {2}", message, number, phoneBookContact.name);
+                        OnSms?.Invoke(this, new MobileAccountEventArgs(phoneBookContact.number, message));
+                        isFound = true;
+                    }
+                }
+                if (!isFound)
+                {
+                    Console.WriteLine("contact {0} is not in phone book", phoneBookContact.number);
+                }
+            }
+        }
+
+        public bool CheckOperator()
+        {
+            if(!isGotOperator)
+            {
+                Console.WriteLine("Can't be done without operator");
+            }
+            return isGotOperator;
         }
     }
 }
