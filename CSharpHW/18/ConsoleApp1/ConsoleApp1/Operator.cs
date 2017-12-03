@@ -9,21 +9,44 @@ namespace ConsoleApp1
     public class Operator
     {
         public string Name;
-        private List<MobileAccount> _accounts;
+
+        private Dictionary<ulong, MobileAccount> _accounts;
+
         public Operator(string name)
         {
             Name = name;
-            _accounts = new List<MobileAccount>();
-        }
-        public void Add(MobileAccount acc)
-        {
-            _accounts.Add(acc);
-        }
-        private void Connect(ulong sender, ulong acceptor)
-        {
-            MobileAccount acc = _accounts;
-            Console.WriteLine("connected {0} and {1}", sender, acceptor);
+            _accounts = new Dictionary<ulong, MobileAccount>();
         }
 
+        public void Add(MobileAccount acc)
+        {
+            try
+            {
+                _accounts.Add(acc.number, acc);
+                acc.OnCall += (sender, args) => { Connect(sender, args); };
+                acc.OnSms += (sender, args) => { RedirectSms(sender, args); };
+            }
+            catch (ArgumentException keyException)
+            {
+                Console.WriteLine("An element with number = \"{0}\" already exists.\n {1}", acc.number, keyException);
+            }
+
+        }
+
+        private void Connect(object sender, MobileAccountEventArgs e)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            var acc = sender as MobileAccount;
+            Console.WriteLine("connected {0} and {1}", acc.number, e.Acceptor);
+            Console.ResetColor();
+        }
+
+        private void RedirectSms(object sender, MobileAccountEventArgs e)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            var acc = sender as MobileAccount;
+            Console.WriteLine("redirected message: \"{0}\" from {1} and {2}",e.Message, acc.number, e.Acceptor);
+            Console.ResetColor();
+        }
     }
 }

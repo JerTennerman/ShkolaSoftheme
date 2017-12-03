@@ -11,11 +11,15 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             var op = new Operator("qwerty");
-            var c1 = new MobileAccount(1, "1");
-            var c2 = new MobileAccount(2, "2");
+            var c1 = new MobileAccount(0951234567, "qwerty");
+            var c2 = new MobileAccount(0635678902, "zxcvb");
             op.Add(c1);
             op.Add(c2);
-            c1.Call()
+            c1.Call(0635678902);
+            c1.Sms(0635678902, "asdasd");
+            c1.AddToContacts(c2);
+            c1.Call(c2);
+            c1.Sms(c2, "sdasdasd");
         }
     }
 }
