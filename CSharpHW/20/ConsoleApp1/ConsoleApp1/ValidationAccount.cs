@@ -14,10 +14,11 @@ namespace ConsoleApp1
         private string _surname;
         private string _email;
         private int _yearOfBirth;
-        public bool IsValidated=false;
+        public bool IsValidated { get; }
 
         public ValidationAccount(string newName, string surname, int yearOfBirth, string email)
         {
+            IsValidated = false;
             _name = newName;
             _surname = surname;
             _yearOfBirth = yearOfBirth;
