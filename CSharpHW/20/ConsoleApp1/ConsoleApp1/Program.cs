@@ -68,7 +68,7 @@ namespace ConsoleApp1
                 int sender = rand.Next(users.Count-1);
                 int acceptor = rand.Next(users.Count-1);
                 int type = rand.Next(2);
-                if (sender != acceptor)
+                if (sender != acceptor && users[sender]!=null && users[acceptor]!=null)
                 {
                     if (type == 1)
                     {
