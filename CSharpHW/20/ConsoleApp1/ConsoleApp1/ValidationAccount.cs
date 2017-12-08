@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class ValidationAccount
+    class ValidationAccount : IValidatableObject
     {
         private string _name;
         private string _surname;
