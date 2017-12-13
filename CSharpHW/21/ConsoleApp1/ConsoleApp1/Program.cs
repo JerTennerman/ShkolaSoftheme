@@ -34,56 +34,49 @@ namespace ConsoleApp1
 
         static void Serialization(List<MobileAccount> users)
         {
-            foreach (var user in users) //518ms
-            {
-            XmlSerializer serializer = new XmlSerializer(typeof(MobileAccount));
 
-                using (StreamWriter streamWriter = File.CreateText(
-                    "XML.xml"))
-                {
-                    serializer.Serialize(streamWriter, user);
-                }
+            XmlSerializer serializer = new XmlSerializer(typeof(List<MobileAccount>));//33ms
+
+            using (var streamWriter = File.OpenWrite("XML.xml"))
+            {
+                serializer.Serialize(streamWriter, users);
             }
 
+            var ser = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(List<MobileAccount>));
+            {
+                using (FileStream fs = new FileStream("json.json", FileMode.OpenOrCreate))//18ms
+                {
+                    ser.WriteObject(fs, users);
+                }
+                BinaryFormatter formatter = new BinaryFormatter();
 
-            //223ms
-            var ser = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(MobileAccount));
-            foreach (var user in users)
-            {
-                using (FileStream fs=new FileStream("json.json",FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream("binary.dat", FileMode.OpenOrCreate))//11ms
                 {
-                    ser.WriteObject(fs, user);
+                    formatter.Serialize(fs, users);
                 }
+
+                var q = 0;
             }
-            BinaryFormatter formatter = new BinaryFormatter();//224ms
-            foreach (var user in users)
-            {
-                using (FileStream fs = new FileStream("binary.dat", FileMode.OpenOrCreate))
-                {
-                    formatter.Serialize(fs, user);
-                }
-            }
-            var q = 0;
         }
 
         static void FillList(List<MobileAccount> emptyList)
         {
-           /* emptyList.Add(new MobileAccount("Alex", "qwe", 2000, "1@1.1"));
-            emptyList.Add(new MobileAccount("Bob", "qwe", 2000, "1@1.1"));
-            emptyList.Add(new MobileAccount("Nick", "qwe", 2000, "1@1.1"));
-            emptyList.Add(new MobileAccount("Sam", "qwe", 2000, "1@1.1"));
-            emptyList.Add(new MobileAccount("Mark", "qwe", 2000, "1@1.1"));
-            emptyList.Add(new MobileAccount("John", "qwe", 2000, "1@1.1"));
-            emptyList.Add(new MobileAccount("Mike", "qwe", 2000, "1@1.1"));
-            emptyList.Add(new MobileAccount("Bill", "qwe", 2000, "1@1.1"));
-            emptyList.Add(new MobileAccount("Jack", "qwe", 2000, "1@1.1"));
-            emptyList.Add(new MobileAccount("Andrew", "qwe", 2000, "1@1.1")); */
+            /* emptyList.Add(new MobileAccount("Alex", "qwe", 2000, "1@1.1"));
+             emptyList.Add(new MobileAccount("Bob", "qwe", 2000, "1@1.1"));
+             emptyList.Add(new MobileAccount("Nick", "qwe", 2000, "1@1.1"));
+             emptyList.Add(new MobileAccount("Sam", "qwe", 2000, "1@1.1"));
+             emptyList.Add(new MobileAccount("Mark", "qwe", 2000, "1@1.1"));
+             emptyList.Add(new MobileAccount("John", "qwe", 2000, "1@1.1"));
+             emptyList.Add(new MobileAccount("Mike", "qwe", 2000, "1@1.1"));
+             emptyList.Add(new MobileAccount("Bill", "qwe", 2000, "1@1.1"));
+             emptyList.Add(new MobileAccount("Jack", "qwe", 2000, "1@1.1"));
+             emptyList.Add(new MobileAccount("Andrew", "qwe", 2000, "1@1.1")); */
 
             for (int i = 0; i < 1000; i++)
             {
                 emptyList.Add(new MobileAccount());
             }
-            
+
         }
 
         static void FillPhoneBook(List<MobileAccount> users)
@@ -99,7 +92,7 @@ namespace ConsoleApp1
 
         static void GiveOperator(List<MobileAccount> users, Operator op)
         {
-            foreach(var user in users)
+            foreach (var user in users)
             {
                 op.Add(user);
             }
@@ -111,8 +104,8 @@ namespace ConsoleApp1
             Random rand = new Random();
             do
             {
-                int sender = rand.Next(users.Count-1);
-                int acceptor = rand.Next(users.Count-1);
+                int sender = rand.Next(users.Count - 1);
+                int acceptor = rand.Next(users.Count - 1);
                 int type = rand.Next(2);
                 if (sender != acceptor)
                 {
