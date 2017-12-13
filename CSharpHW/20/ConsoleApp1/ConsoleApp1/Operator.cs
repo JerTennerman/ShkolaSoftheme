@@ -99,7 +99,7 @@ namespace ConsoleApp1
             }
             catch(Exception notRegisteredUserException)
             {
-                Console.WriteLine(e.Acceptor + "is other operators client");
+                Console.WriteLine(e.Acceptor + "is other operators client"+ notRegisteredUserException.Message);
             }
         }
 
