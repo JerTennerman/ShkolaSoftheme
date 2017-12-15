@@ -32,7 +32,6 @@ namespace ZipAll
                     default:
                         {
                             AssignThreads(dirs);
-                            Thread.Sleep(400);
                             break;
                         }
                 }
@@ -42,21 +41,7 @@ namespace ZipAll
                 Console.WriteLine("no path has been entered");
             }
         }
-        /*for (int i = 0; i < dirs.Length; i++)
-                            {
-                                if (i < dirs.Length / 2)
-                                {
-                                    firstHalf.Add(dirs[i]);
-                                }
-                                else
-                                {
-                                    secondHalf.Add(dirs[i]);
-                                }
-                            }
-                            Thread thread1 = new Thread(Zipping);
-                            thread1.Start(firstHalf);
-                            Thread thread2 = new Thread(Zipping);
-                            thread1.Start(secondHalf);*/
+
         static void AssignThreads(string[] dirs)
         {
             List<string> firstPart = new List<string>();
@@ -110,7 +95,6 @@ namespace ZipAll
                 thread4.Start(fourthPart.ToArray());
             }
 
-            Thread.Sleep(4000);
         }
 
         static void Zipping(Object dirs)
