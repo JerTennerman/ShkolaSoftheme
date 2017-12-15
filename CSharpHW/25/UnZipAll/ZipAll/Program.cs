@@ -16,7 +16,7 @@ namespace ZipAll
             string path = Console.ReadLine();
             if (!String.IsNullOrEmpty(path))
             {
-                string[] dirs = Directory.GetFiles(path, "*.*", System.IO.SearchOption.AllDirectories);
+                string[] dirs = Directory.GetFiles(path, "*.zip*", System.IO.SearchOption.AllDirectories);
                 switch (dirs.Length)
                 {
                     case 0:
@@ -26,7 +26,7 @@ namespace ZipAll
                         }
                     case 1:
                         {
-                            Zipping(dirs);
+                            UnZipping(dirs);
                             break;
                         }
                     default:
@@ -81,7 +81,7 @@ namespace ZipAll
                             break;
                         }
                 }
-                if(partToAdd!=5)
+                if (partToAdd != 5)
                 {
                     partToAdd++;
                 }
@@ -91,45 +91,35 @@ namespace ZipAll
                 }
             }
 
-            Thread thread1 = new Thread(Zipping);
-            Thread thread2 = new Thread(Zipping);
+            Thread thread1 = new Thread(UnZipping);
+            Thread thread2 = new Thread(UnZipping);
             thread1.Start(firstPart);
             thread2.Start(secondPart);
-            
-            if(thirdPart!=null)
+
+            if (thirdPart.Count != 0)
             {
-                Thread thread3 = new Thread(Zipping);
+                Thread thread3 = new Thread(UnZipping);
                 thread3.Start(thirdPart);
             }
-            if(fourthPart!=null)
+            if (fourthPart.Count != 0)
             {
-                Thread thread4 = new Thread(Zipping);
+                Thread thread4 = new Thread(UnZipping);
                 thread4.Start(fourthPart);
             }
-            if (fifthPart != null)
+            if (fifthPart.Count != 0)
             {
-                Thread thread5 = new Thread(Zipping);
+                Thread thread5 = new Thread(UnZipping);
                 thread5.Start(fifthPart);
             }
 
         }
 
-        static void Zipping(Object dirs)
+        static void UnZipping(Object dirs)
         {
             var files = dirs as List<string>;
             foreach (var dir in files)
             {
-                if (!File.Exists(dir + ".zip") && !dir.EndsWith(".zip"))
-                {
-                    try
-                    {
-                        ZipFile.CreateFromDirectory(dir, dir + ".zip", CompressionLevel.Fastest, true);
-                    }
-                    catch
-                    {
-
-                    }
-                }
+                ZipFile.ExtractToDirectory(dir, dir.Replace(".zip", ""));
             }
         }
     }
