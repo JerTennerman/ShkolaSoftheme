@@ -81,7 +81,7 @@ namespace ZipAll
                             break;
                         }
                 }
-                if(partToAdd!=5)
+                if (partToAdd != 5)
                 {
                     partToAdd++;
                 }
@@ -95,18 +95,18 @@ namespace ZipAll
             Thread thread2 = new Thread(Zipping);
             thread1.Start(firstPart);
             thread2.Start(secondPart);
-            
-            if(thirdPart!=null)
+
+            if (thirdPart.Count != 0)
             {
                 Thread thread3 = new Thread(Zipping);
                 thread3.Start(thirdPart);
             }
-            if(fourthPart!=null)
+            if (fourthPart.Count != 0)
             {
                 Thread thread4 = new Thread(Zipping);
                 thread4.Start(fourthPart);
             }
-            if (fifthPart != null)
+            if (fifthPart.Count != 0)
             {
                 Thread thread5 = new Thread(Zipping);
                 thread5.Start(fifthPart);
