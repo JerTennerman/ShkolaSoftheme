@@ -121,14 +121,7 @@ namespace ZipAll
             {
                 if (!File.Exists(dir + ".zip") && !dir.EndsWith(".zip"))
                 {
-                    try
-                    {
-                        ZipFile.CreateFromDirectory(dir, dir + ".zip", CompressionLevel.Fastest, true);
-                    }
-                    catch
-                    {
-
-                    }
+                    ZipFile.CreateFromDirectory(dir, dir + ".zip");
                 }
             }
         }
