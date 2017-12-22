@@ -73,7 +73,7 @@ namespace ConsoleApp1
                 }
                 Tasks[taskCounter].Start();
 
-                if (taskCounter == Environment.ProcessorCount)
+                if (taskCounter == Environment.ProcessorCount-1)
                 {
                     taskCounter = 0;
                 }
