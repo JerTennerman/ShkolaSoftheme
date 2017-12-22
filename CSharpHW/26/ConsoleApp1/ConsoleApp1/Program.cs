@@ -60,27 +60,27 @@ namespace ConsoleApp1
             var taskCounter = 0;
             List<Task> Tasks = new List<Task>();
 
-            for (int i = 0; i < directories.Length; i++)
+            for (int i = 0; i < directories.Length-1; i++)
             {
-                //if (Tasks.Count != taskCounter)
-                //{
-                //    Tasks[taskCounter].Wait();
-                //    Tasks[taskCounter] = new Task(() => Changer(directories[i], lineToChange, newLine));
-                //}
-                //else
-                //{
+                if (Tasks.Count != taskCounter)
+                {
+                    Tasks[taskCounter].Wait();
+                    Tasks[taskCounter] = new Task(() => Changer(directories[i], lineToChange, newLine));
+                }
+                else
+                {
                     Tasks.Add(new Task(() => Changer(directories[i], lineToChange, newLine)));
-                //}
-                Tasks[i].Start();
+                }
+                Tasks[taskCounter].Start();
 
-                //if (taskCounter == Environment.ProcessorCount)
-                //{
-                //    taskCounter = 0;
-                //}
-                //else
-                //{
-                //    taskCounter++;
-                //}
+                if (taskCounter == Environment.ProcessorCount)
+                {
+                    taskCounter = 0;
+                }
+                else
+                {
+                    taskCounter++;
+                }
             }
 
             Task.WaitAll(Tasks.ToArray());
