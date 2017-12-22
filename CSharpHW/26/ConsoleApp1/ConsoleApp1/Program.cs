@@ -11,7 +11,7 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Enter directory:");
             var path = Console.ReadLine();
-            if (!string.IsNullOrEmpty(path))
+            if (!string.IsNullOrEmpty(path) && Directory.Exists(path))
             {
                 Console.WriteLine("Enter line to find:");
                 var lineToChange = Console.ReadLine();
@@ -49,6 +49,10 @@ namespace ConsoleApp1
                         }
                 }
             }
+            else
+            {
+                Console.WriteLine("Invalid directory");
+            }
         }
 
         static void TaskManager(string[] directories, string lineToChange, string newLine)
@@ -58,25 +62,25 @@ namespace ConsoleApp1
 
             for (int i = 0; i < directories.Length; i++)
             {
-                if (Tasks.Count != taskCounter)
-                {
-                    Tasks[taskCounter].Wait();
-                    Tasks[taskCounter] = new Task(() => Changer(directories[i], lineToChange, newLine));
-                }
-                else
-                {
+                //if (Tasks.Count != taskCounter)
+                //{
+                //    Tasks[taskCounter].Wait();
+                //    Tasks[taskCounter] = new Task(() => Changer(directories[i], lineToChange, newLine));
+                //}
+                //else
+                //{
                     Tasks.Add(new Task(() => Changer(directories[i], lineToChange, newLine)));
-                }
-                Tasks[taskCounter].Start();
+                //}
+                Tasks[i].Start();
 
-                if (taskCounter == Environment.ProcessorCount)
-                {
-                    taskCounter = 0;
-                }
-                else
-                {
-                    taskCounter++;
-                }
+                //if (taskCounter == Environment.ProcessorCount)
+                //{
+                //    taskCounter = 0;
+                //}
+                //else
+                //{
+                //    taskCounter++;
+                //}
             }
 
             Task.WaitAll(Tasks.ToArray());
