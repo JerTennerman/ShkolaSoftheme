@@ -11,14 +11,14 @@ namespace assembly
         static void Main(string[] args)
         {
             Worker work = new Worker();
-            work.Print();
+            //work.Print();
             work.ShowMessege("qwdqe");
         }
     }
 
     public class Worker
     {
-        public void Print()
+        public void ShowMessege()
         {
             Console.WriteLine("messege");
         }
