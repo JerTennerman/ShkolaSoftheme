@@ -121,7 +121,10 @@ namespace ZipAll
             {
                 if (!File.Exists(dir + ".zip") && !dir.EndsWith(".zip"))
                 {
-                    ZipFile.CreateFromDirectory(dir, dir + ".zip");
+                    using (ZipArchive archive = ZipFile.Open(dir, ZipArchiveMode.Update))
+                    {
+                        archive.CreateEntryFromFile(dir, dir+".zip");
+                    }
                 }
             }
         }
