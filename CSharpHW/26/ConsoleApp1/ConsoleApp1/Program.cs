@@ -62,6 +62,7 @@ namespace ConsoleApp1
 
             for (int i = 0; i < directories.Length-1; i++)
             {
+                Console.WriteLine(directories[i]);
                 if (Tasks.Count != taskCounter)
                 {
                     Tasks[taskCounter].Wait();
