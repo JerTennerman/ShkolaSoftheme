@@ -26,8 +26,10 @@ namespace reflection
                 Type t = asm.GetType("assembly.Worker");
                 ConstructorInfo Constructor = t.GetConstructor(Type.EmptyTypes);
                 object ClassObj = Constructor.Invoke(new object[] { });
+
                 MethodInfo o = t.GetMethod("ShowMessege",new Type[]{typeof(string)});
                 o.Invoke(ClassObj, new string[] {"asdawd"});
+
                 MethodInfo a = t.GetMethod("Print");
                 a.Invoke(ClassObj, null);
             }
